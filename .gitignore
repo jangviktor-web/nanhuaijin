@@ -1,0 +1,18 @@
+# 备份与临时文件
+*.bak
+*.bak.*
+*.orig
+*.orig-bak-*
+*~
+.DS_Store
+Thumbs.db
+
+# 测试与暂存产物
+.skillopt-sleep/
+test-report*.md
+nanhuaijin-*-tasks.json
+
+# 系统与编辑器
+desktop.ini
+.idea/
+.vscode/
