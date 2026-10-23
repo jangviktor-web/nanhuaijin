@@ -14,9 +14,11 @@
 [![Agent Skills Standard](https://img.shields.io/badge/Agent%20Skills%20Standard-Ready-orange?style=for-the-badge&logo=openai&logoColor=white)]()
 [![自检](https://img.shields.io/badge/selfcheck-566%2F566%20引文核验-brightgreen?style=for-the-badge)](#质量保障)
 
+<a href="#使用演示"><b>使用演示</b></a> · <a href="#快速安装"><b>快速安装</b></a> · <a href="#核心知识体系"><b>核心知识体系</b></a> · <a href="#质量保障"><b>质量保障</b></a> · <a href="#相关项目--同源蒸馏更多skill"><b>相关项目</b></a>
+
 </div>
 
-<img src="docs/assets/demo/hero-banner.webp" alt="南怀瑾Skill · 国学思维AI">
+<p align="center"><img src="docs/assets/demo/hero-banner.webp" alt="南怀瑾Skill · 国学思维AI"></p>
 
 ---
 
@@ -28,29 +30,49 @@
 
 **直接激活词**：`南怀瑾` / `南师` / `怀师` / `论语别裁` / `原本大学微言` / `话说中庸` / `孟子旁通` / `老子他说` / `庄子諵譁` / `列子臆说` / `参同契` / `金刚经说什么` / `维摩诘` / `楞严` / `圆觉` / `如何修证佛法` / `定慧初修` / `静坐修道` / `易经杂说` / `系传别讲` / `小言黄帝内经` / `历史的经验` / `三家店` / `经史合参` / `七证八目` / `四禅八定` / `五十阴魔` / `用南怀瑾的方式讲` / `南师会怎么看`
 
+<details open>
+<summary><b>目录</b></summary>
+
+- [使用演示](#使用演示)
+- [快速安装](#快速安装)
+- [版本记录](#版本记录)
+- [功能矩阵](#功能矩阵)
+- [蒸馏架构：从 862 万字到一次回答](#蒸馏架构从-862-万字到一次回答)
+- [目录结构](#目录结构)
+- [核心知识体系](#核心知识体系)
+- [质量保障](#质量保障)
+- [数据来源](#数据来源)
+- [更新日志](#更新日志)
+- [相关项目 · 同源蒸馏更多.skill](#相关项目--同源蒸馏更多skill)
+- [致谢](#致谢) · [免责声明](#免责声明)
+
+</details>
+
 ---
 
 ## 使用演示
 
-**① 解经**——用户问得浅，他先否定通行解，再把「学问」翻回做人做事：
+<h4 align="center">① 解经 —— 用户问得浅，他先否定通行解，再把「学问」翻回做人做事</h4>
 
-![解经演示](docs/assets/demo/demo-1-jiejing.webp)
+<p align="center"><img src="docs/assets/demo/demo-1-jiejing.webp" alt="解经演示"></p>
 
-**② 修证问答**——境界当前先降级，安全红线一句不少：
+<h4 align="center">② 修证问答 —— 境界当前先降级，安全红线一句不少</h4>
 
-![修证问答演示](docs/assets/demo/demo-2-xiuzheng.webp)
+<p align="center"><img src="docs/assets/demo/demo-2-xiuzheng.webp" alt="修证问答演示"></p>
 
-**③ 知识库检索**——48 部全文直接 grep，自检脚本可复现：
+<h4 align="center">③ 知识库检索 —— 48 部全文直接 grep，自检脚本可复现</h4>
 
-![知识库检索演示](docs/assets/demo/demo-3-grep.webp)
+<p align="center"><img src="docs/assets/demo/demo-3-grep.webp" alt="知识库检索演示"></p>
 
-> 演示中的引文全部回底本核验（见 `cases/` 与 `scripts/selfcheck.py`）。
+<p align="center"><sub>演示中的引文全部回底本核验（见 <code>cases/</code> 与 <code>scripts/selfcheck.py</code>）</sub></p>
 
 ---
 
 ## 快速安装
 
 > 其他安装方式（SkillHub / 各平台 Skill 市场等）**敬请期待**；后续版本更新将随仓库发布同步，不再单独维护安装通道。
+
+<p align="center"><b><code>git clone</code> → 放入任意支持 SKILL.md 的 skills 目录 → 说一句「南师会怎么看」</b></p>
 
 <details>
 <summary><b>手动安装（git clone）</b></summary>
@@ -91,16 +113,19 @@ python3 scripts/snip.py "三家店" 40  # 关键词上下文抽取（只读）
 
 ## 版本记录
 
-#### v1.0.0（2026-10-22 ~ 10-23）首次完整蒸馏 · 深度档
-
-基于 ima 知识库「南怀瑾全集」48 部（约 862 万字）全量导出，中医思维蒸馏器跨领域适配（TCM 维度替换为解经、修证、安全、功法、次第、现代议题）：12 维并行调研产出 13 个 references（约 15.8 万字符），合成 SKILL.md 七段式角色规则 + 前置表达速查卡 + 回答工作流 + 检索索引，cases/ 8 个完整案例。质量关：530 条引文逐条回原书核验；表达还原度两轮配对盲评 78 → 100；百题实测覆盖 96%。
-
 #### 🆕 v1.1.0（2026-10-23）补录三书 · 全量离线版 🆕
 
 - **补录**：恢复《列子臆说（中册）》《中国佛教发展史略述》《学佛者的基本信念》三部原文，`modules/` 收全 48 部（25MB），不受平台体积上限约束。
 - **新增** `references/17-supplement-3books.md`：三书结构地图、核心判读、术语白话对照、检索接入映射。
-- **补强四处**：修证次第「体合于心—心合于气—气合于神—神合于无」四步；「顽空当定＝大昏沉」「念诵身体摇晃＝受蕴牵引」两类偏差；行愿一项终有底本；佛教史与丛林制度。
+- **补强四处**：修证次第「体合于心—心合于气—气合于神—气合于无」四步；「顽空当定＝大昏沉」「念诵身体摇晃＝受蕴牵引」两类偏差；行愿一项终有底本；佛教史与丛林制度。
 - **自检**：566 条带出处引文、45 条索引路径、35 组关键词、72 个文件编码，全部 PASS。
+
+<details>
+<summary><b>v1.0.0（2026-10-22 ~ 10-23）首次完整蒸馏 · 深度档（点击展开）</b></summary>
+
+基于 ima 知识库「南怀瑾全集」48 部（约 862 万字）全量导出，中医思维蒸馏器跨领域适配（TCM 维度替换为解经、修证、安全、功法、次第、现代议题）：12 维并行调研产出 13 个 references（约 15.8 万字符），合成 SKILL.md 七段式角色规则 + 前置表达速查卡 + 回答工作流 + 检索索引，cases/ 8 个完整案例。质量关：530 条引文逐条回原书核验；表达还原度两轮配对盲评 78 → 100；百题实测覆盖 96%。
+
+</details>
 
 ---
 
@@ -117,11 +142,14 @@ python3 scripts/snip.py "三家店" 40  # 关键词上下文抽取（只读）
 
 ### 蒸馏架构：从 862 万字到一次回答
 
-![蒸馏架构](docs/assets/demo/arch-knowledge.webp)
+<p align="center"><img src="docs/assets/demo/arch-knowledge.webp" alt="蒸馏架构"></p>
 
-**核心能力**：以经解经读四书五经与老庄、禅与修证次第问答、静坐与身心反应的安全指引、三家异同辨析、文化与教育议题、生死与临终、以历史证经。
-
-**明确不做**：医疗诊断与处方、投资理财建议、命理占卜与神通验证、代替南怀瑾本人及其机构发言。涉及抑郁、焦虑、失眠、幻听等心理状况，回答必须出现「这个要找专业医生」。
+<table>
+<tr>
+<td width="50%" valign="top"><b>✅ 核心能力</b><br>以经解经读四书五经与老庄、禅与修证次第问答、静坐与身心反应的安全指引、三家异同辨析、文化与教育议题、生死与临终、以历史证经。</td>
+<td width="50%" valign="top"><b>⛔ 明确不做</b><br>医疗诊断与处方、投资理财建议、命理占卜与神通验证、代替南怀瑾本人及其机构发言。涉及抑郁、焦虑、失眠、幻听等心理状况，回答必须出现「这个要找专业医生」。</td>
+</tr>
+</table>
 
 ---
 
@@ -140,7 +168,6 @@ nanhuaijin/
 │   ├── 01-core-philosophy.md        # 8 公理 + 11 模型 + 6 算法 + 7 边界
 │   ├── 02-decision-heuristics.md    # 解经法 15 条 + 观机应答 12 条 + 决策流程图
 │   ├── 03-expression-dna.md         # 口头禅实测频次、开场/转场/收尾、负面清单
-   │   ...
 │   └── 17-supplement-3books.md      # 三书补录（列子中册／佛教史略／普贤行愿）
 ├── cases/                   # 8 个案例 + 总表（01_jiejing=解经，02_daYi=应答，03_wenhua=文化）
 ├── docs/assets/demo/        # README 用图：Hero 横幅 / 蒸馏架构 / 工作流 / 铁律 / 使用演示（WebP 质量 80）
@@ -159,13 +186,13 @@ nanhuaijin/
 2. **再解义**——用最土的话把古文翻过来，不许掉书袋。
 3. **末落人**——这道理跟你今天做人做事什么关系。只讲道理不落人，就不是他。
 
-![三条铁律](docs/assets/demo/law-three.webp)
+<p align="center"><img src="docs/assets/demo/law-three.webp" alt="三条铁律"></p>
 
 ### 回答工作流：先判位置，再取原话，最后才开口
 
-![回答工作流](docs/assets/demo/workflow-answer.webp)
+<p align="center"><img src="docs/assets/demo/workflow-answer.webp" alt="回答工作流"></p>
 
-> 完整工作流与输出形态铁律见 `SKILL.md`「回答工作流」一节；四类骨架（解经 / 修行 / 文化议题 / 闲聊）都必须以「末落人」结束。
+<p align="center"><sub>完整工作流与输出形态铁律见 <code>SKILL.md</code>「回答工作流」一节；四类骨架（解经 / 修行 / 文化议题 / 闲聊）都必须以「末落人」结束。</sub></p>
 
 ### 十一个心智模型（速览）
 
@@ -183,13 +210,13 @@ nanhuaijin/
 | 历史是人性实验室 | 谋略要学，但不该用 |
 | 不昧因果 | 命与自由之间有窄缝：不落因果是妄，不昧因果是正 |
 
-完整版见 `references/01-core-philosophy.md`；解经法 15 条与观机应答 12 条见 `references/02-decision-heuristics.md`。
+<p align="center"><sub>完整版见 <code>references/01-core-philosophy.md</code>；解经法 15 条与观机应答 12 条见 <code>references/02-decision-heuristics.md</code>。</sub></p>
 
 ### 修证安全红线（10 条，节选）
 
-不承诺开悟/见性/神通；不用修行替代医疗，有病先看医生；精神与心理危机立即转介医疗；不指导断食、闭长关、长时间不睡；不给药物丹药；不建议停药减药；不判人生死吉凶；不介入他人家庭财务师徒纠纷；涉未成年人静坐须监护人陪同；不承诺治病效果。
+**不承诺**开悟/见性/神通 · 不替代医疗，有病先看医生 · 精神与心理危机立即转介医疗 · 不指导断食、闭长关、长时间不睡 · 不给药物丹药 · 不建议停药减药 · 不判人生死吉凶 · 不介入他人家庭财务师徒纠纷 · 涉未成年人静坐须监护人陪同 · 不承诺治病效果。
 
-完整版见 `references/09-practice-safety.md`。
+<p align="center"><sub>完整版见 <code>references/09-practice-safety.md</code>。</sub></p>
 
 ---
 
@@ -198,13 +225,13 @@ nanhuaijin/
 | 关卡 | 方法 | 结果 |
 |---|---|---|
 | 引文真实性 | `scripts/selfcheck.py` 把 SKILL/references/cases 全部带出处引文抽出去底本做子串匹配 | **566/566 命中** |
-| 索引完整性 | SKILL.md 全部 `modules|references|cases/…​.md` 路径存在性 + 关键词组实测命中 | 45/45 路径、35/35 关键词 |
+| 索引完整性 | SKILL.md 全部 `modules|references|cases/….md` 路径存在性 + 关键词组实测命中 | 45/45 路径、35/35 关键词 |
 | 编码卫生 | 全库 UTF-8 解码 + U+FFFD 扫描 + 繁体混入检查 | 72 文件零问题 |
 | 声称核对 | README 声称值 vs 实际清点（著作数/案例数/文件数） | 全部一致 |
 | 管线集成 | skillopt-sleep 引擎全流程（dry-run→run→gate→stage→adopt→rollback） | held-out 0.292→0.625，gate 拦截有害编辑，live 零改动 |
 | 人格合规 | 6 类路由场景 × 10 项表达规则本地打分 | 62/63（98.4%），引文 4/4 回底本命中 |
 
-**纪律**：查不到的原话不编——标「南师大意」或「待核」；转引古人的话必须声明；他的时代判断有年份，不当对当下的预言。
+<p align="center"><b>纪律</b>：查不到的原话不编——标「南师大意」或「待核」；转引古人的话必须声明；他的时代判断有年份，不当对当下的预言。</p>
 
 ---
 
@@ -224,13 +251,15 @@ nanhuaijin/
 
 ## 相关项目 · 同源蒸馏更多.skill
 
-| 项目 | 流派 | 说明 |
-|---|---|---|
-| [nihaixia](https://github.com/jangviktor-web/nihaixia) | 经方派 | 倪海厦中医思维 Skill，六经辨证 + 258 方剂量 |
-| [tcm-distiller](https://github.com/jangviktor-web/tcm-distiller) | 流水线 | 中医思维蒸馏器，本 skill 的蒸馏框架来源 |
-| [zeng-shiqiang](https://github.com/jangviktor-web/zeng-shiqiang) | 管理/易理 | 曾仕强中国式管理思维 Skill |
-| [libai-skill](https://github.com/jangviktor-web/libai-skill) | 文学 | 李白诗学思维 Skill |
-| [huxishu](https://github.com/jangviktor-web/huxishu) | 经方派 | 胡希恕六经八纲辨证 Skill |
+<table align="center">
+<tr>
+<td align="center" width="180"><a href="https://github.com/jangviktor-web/nihaixia"><b>nihaixia</b></a><br><sub>经方派 · 倪海厦</sub></td>
+<td align="center" width="180"><a href="https://github.com/jangviktor-web/tcm-distiller"><b>tcm-distiller</b></a><br><sub>流水线 · 蒸馏框架</sub></td>
+<td align="center" width="180"><a href="https://github.com/jangviktor-web/zeng-shiqiang"><b>zeng-shiqiang</b></a><br><sub>管理/易理 · 曾仕强</sub></td>
+<td align="center" width="180"><a href="https://github.com/jangviktor-web/libai-skill"><b>libai-skill</b></a><br><sub>文学 · 李白</sub></td>
+<td align="center" width="180"><a href="https://github.com/jangviktor-web/huxishu"><b>huxishu</b></a><br><sub>经方派 · 胡希恕</sub></td>
+</tr>
+</table>
 
 ---
 
@@ -250,5 +279,9 @@ nanhuaijin/
 <div align="center">
 
 **基于南怀瑾 48 部著作公开文本蒸馏整理 · 遵循 [MulanPSL-2.0](LICENSE) 开源协议**
+
+<br>
+
+<sub>如果这个项目对你有用，欢迎 ⭐ Star 支持</sub>
 
 </div>
