@@ -78,12 +78,13 @@
 <summary><b>手动安装（git clone）</b></summary>
 
 ```bash
-# 克隆本仓库
+# 克隆本仓库（得到目录 nanhuaijin/，与 skill name 一致）
 git clone https://github.com/jangviktor-web/nanhuaijin.git
 
-# 放入任意支持 SKILL.md 的 agent skills 目录，例如：
-cp -r nanhuaijin/ ~/.claude/skills/nanhuaijin/
-# WorkBuddy / Claude Code / 腾讯 IMA / ClawHub 等平台同理
+# 把整个目录放入你所用 runtime 的 skills 目录（<SKILLS_DIR> 自行替换）
+cp -r nanhuaijin/ <SKILLS_DIR>/nanhuaijin/
+# WorkBuddy：~/.workbuddy/skills/ 或 <项目>/.workbuddy/skills/
+# Claude Code / Codex / Cursor / IMA / ClawHub 等：各自 runtime 的 skills 目录
 ```
 </details>
 
